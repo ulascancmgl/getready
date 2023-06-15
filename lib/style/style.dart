@@ -1,23 +1,19 @@
 import 'package:flutter/material.dart';
 
-
 class AppStyles {
   static const TextStyle bodySmallText = TextStyle(
-    fontFamily: 'Papyrus',
     fontSize: 12,
     fontWeight: FontWeight.normal,
     color: Colors.black,
   );
 
   static const TextStyle bodyMediumText = TextStyle(
-    fontFamily: 'Papyrus',
     fontSize: 16,
     fontWeight: FontWeight.bold,
     color: Colors.black,
   );
 
   static const TextStyle bodyLargeText = TextStyle(
-    fontFamily: 'Papyrus',
     fontSize: 20,
     fontWeight: FontWeight.bold,
     color: Colors.black,
@@ -33,6 +29,4 @@ class AppStyles {
       borderRadius: BorderRadius.circular(10),
     ),
   );
-
-  static const Color scaffoldBackgroundColor = Colors.white;
 }
