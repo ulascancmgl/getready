@@ -3,6 +3,7 @@ import 'package:getready/page/home.dart';
 import 'package:getready/style/style.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:getready/style/theme_changer.dart';
+import 'package:getready/utils/lang_functions.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => ThemeChanger()..initializeColor(),
+      create: (_) => ThemeChanger(LanguageUtils())..initializeColor(),
       child: Consumer<ThemeChanger>(
         builder: (context, themeChanger, _) {
           return MaterialApp(
