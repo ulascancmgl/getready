@@ -23,9 +23,12 @@ class AppDrawer extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.indigo,
             ),
-            child: Text(
-              languageUtils.getTranslatedString('Settings'),
-              style: AppStyles.bodyLargeText,
+            child: Center(
+              child: Text(
+                languageUtils.getTranslatedString('Settings'),
+                style: AppStyles.bodyExtraLargeText,
+                textAlign: TextAlign.center,
+              ),
             ),
           ),
           ExpansionTile(
@@ -33,7 +36,10 @@ class AppDrawer extends StatelessWidget {
               children: [
                 Icon(Icons.language_sharp, size: 24),
                 SizedBox(width: 10),
-                Text(languageUtils.getTranslatedString('Languages')),
+                Text(
+                  languageUtils.getTranslatedString('Languages'),
+                  style: AppStyles.bodyLargeText,
+                ),
               ],
             ),
             children: [
@@ -42,7 +48,10 @@ class AppDrawer extends StatelessWidget {
                   children: [
                     Text('🇺🇸', style: TextStyle(fontSize: 24)),
                     SizedBox(width: 10),
-                    Text('English'),
+                    Text(
+                      'English',
+                      style: AppStyles.bodyMediumText,
+                    ),
                   ],
                 ),
                 onTap: () {
@@ -55,7 +64,10 @@ class AppDrawer extends StatelessWidget {
                   children: [
                     Text('🇹🇷', style: TextStyle(fontSize: 24)),
                     SizedBox(width: 10),
-                    Text('Türkçe'),
+                    Text(
+                      'Türkçe',
+                      style: AppStyles.bodyMediumText,
+                    ),
                   ],
                 ),
                 onTap: () {
@@ -68,7 +80,10 @@ class AppDrawer extends StatelessWidget {
                   children: [
                     Text('🇫🇷', style: TextStyle(fontSize: 24)),
                     SizedBox(width: 10),
-                    Text('Français'),
+                    Text(
+                      'Français',
+                      style: AppStyles.bodyMediumText,
+                    ),
                   ],
                 ),
                 onTap: () {
@@ -85,7 +100,7 @@ class AppDrawer extends StatelessWidget {
                 SizedBox(width: 10),
                 Text(
                   languageUtils.getTranslatedString('Application Settings'),
-                  style: AppStyles.bodyMediumText,
+                  style: AppStyles.bodyLargeText,
                 ),
               ],
             ),
@@ -97,7 +112,7 @@ class AppDrawer extends StatelessWidget {
                     Text(
                       languageUtils
                           .getTranslatedString('Clear Application Data'),
-                      style: AppStyles.bodySmallText,
+                      style: AppStyles.bodyMediumText,
                     ),
                   ],
                 ),
@@ -110,7 +125,7 @@ class AppDrawer extends StatelessWidget {
                     Text(
                       languageUtils
                           .getTranslatedString('Change Background Color'),
-                      style: AppStyles.bodySmallText,
+                      style: AppStyles.bodyMediumText,
                     ),
                   ],
                 ),

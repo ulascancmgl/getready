@@ -1,3 +1,4 @@
+import 'package:getready/style/style.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -45,87 +46,126 @@ class ThemeChanger extends ChangeNotifier {
       context: context,
       builder: (BuildContext context) {
         return SimpleDialog(
-          title: Text(languageUtils.getTranslatedString('Select Color')),
+          title: Text(
+            languageUtils.getTranslatedString('Select Color'),
+            style: AppStyles.bodyLargeText,
+          ),
           children: [
             ListTile(
-              title: Text(languageUtils.getTranslatedString('BlueGrey')),
+              title: Text(
+                languageUtils.getTranslatedString('BlueGrey'),
+                style: AppStyles.bodyMediumText,
+              ),
               onTap: () {
                 changeScaffoldColor(context, Colors.blueGrey);
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text(languageUtils.getTranslatedString('Red')),
+              title: Text(
+                languageUtils.getTranslatedString('Red'),
+                style: AppStyles.bodyMediumText,
+              ),
               onTap: () {
                 changeScaffoldColor(context, Colors.red);
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text(languageUtils.getTranslatedString('Green')),
+              title: Text(
+                languageUtils.getTranslatedString('Green'),
+                style: AppStyles.bodyMediumText,
+              ),
               onTap: () {
                 changeScaffoldColor(context, Colors.green);
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text(languageUtils.getTranslatedString('Yellow')),
+              title: Text(
+                languageUtils.getTranslatedString('Yellow'),
+                style: AppStyles.bodyMediumText,
+              ),
               onTap: () {
                 changeScaffoldColor(context, Colors.yellow);
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text(languageUtils.getTranslatedString('Orange')),
+              title: Text(
+                languageUtils.getTranslatedString('Orange'),
+                style: AppStyles.bodyMediumText,
+              ),
               onTap: () {
                 changeScaffoldColor(context, Colors.orange);
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text(languageUtils.getTranslatedString('Purple')),
+              title: Text(
+                languageUtils.getTranslatedString('Purple'),
+                style: AppStyles.bodyMediumText,
+              ),
               onTap: () {
                 changeScaffoldColor(context, Colors.purple);
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text(languageUtils.getTranslatedString('Pink')),
+              title: Text(
+                languageUtils.getTranslatedString('Pink'),
+                style: AppStyles.bodyMediumText,
+              ),
               onTap: () {
                 changeScaffoldColor(context, Colors.pink);
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text(languageUtils.getTranslatedString('Teal')),
+              title: Text(
+                languageUtils.getTranslatedString('Teal'),
+                style: AppStyles.bodyMediumText,
+              ),
               onTap: () {
                 changeScaffoldColor(context, Colors.teal);
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text(languageUtils.getTranslatedString('Cyan')),
+              title: Text(
+                languageUtils.getTranslatedString('Cyan'),
+                style: AppStyles.bodyMediumText,
+              ),
               onTap: () {
                 changeScaffoldColor(context, Colors.cyan);
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text(languageUtils.getTranslatedString('Amber')),
+              title: Text(
+                languageUtils.getTranslatedString('Amber'),
+                style: AppStyles.bodyMediumText,
+              ),
               onTap: () {
                 changeScaffoldColor(context, Colors.amber);
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text(languageUtils.getTranslatedString('Deep Purple')),
+              title: Text(
+                languageUtils.getTranslatedString('Deep Purple'),
+                style: AppStyles.bodyMediumText,
+              ),
               onTap: () {
                 changeScaffoldColor(context, Colors.deepPurple);
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text(languageUtils.getTranslatedString('Indigo')),
+              title: Text(
+                languageUtils.getTranslatedString('Indigo'),
+                style: AppStyles.bodyMediumText,
+              ),
               onTap: () {
                 changeScaffoldColor(context, Colors.indigo);
                 Navigator.pop(context);

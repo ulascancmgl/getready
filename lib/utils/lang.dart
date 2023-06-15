@@ -54,7 +54,7 @@ Map<String, Map<String, String>> allTranslations = {
     'Deep Purple': 'Violet Foncé',
     'Indigo': 'Indigo',
     'Change Background Color': 'Changer la couleur',
-    'Application Settings': 'Paramètres de l\'application',
+    'Application Settings': 'Réglages',
     'Clear Application Data': 'Effacer données',
     'Languages': 'Langues',
     'Settings': 'Paramètres',

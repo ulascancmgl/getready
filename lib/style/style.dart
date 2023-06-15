@@ -19,6 +19,12 @@ class AppStyles {
     color: Colors.black,
   );
 
+  static const TextStyle bodyExtraLargeText = TextStyle(
+    fontSize: 28,
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
+  );
+
   static final ButtonStyle elevatedButtonStyle = ElevatedButton.styleFrom(
     textStyle: bodyMediumText,
     fixedSize: Size(150, 50),
