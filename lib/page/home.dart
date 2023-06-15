@@ -3,6 +3,7 @@ import 'package:getready/style/style.dart';
 import 'package:getready/style/theme_changer.dart';
 import 'package:getready/utils/lang_functions.dart';
 
+import '../model/model.dart';
 import '../style/settings_drawer.dart';
 
 class HomePage extends StatefulWidget {
@@ -42,6 +43,16 @@ class _HomePageState extends State<HomePage> {
       endDrawer: AppDrawer(
         themeChanger: themeChanger!,
         languageUtils: languageUtils,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            myTable,
+            const SizedBox(height: 20),
+            myTable2,
+          ],
+        ),
       ),
     );
   }
