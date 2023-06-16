@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+
 import 'package:getready/style/style.dart';
 import 'package:getready/style/theme_changer.dart';
 import 'package:getready/utils/lang_functions.dart';
 
-import '../model/model.dart';
 import '../style/settings_drawer.dart';
+import 'alarm_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -44,16 +45,7 @@ class _HomePageState extends State<HomePage> {
         themeChanger: themeChanger!,
         languageUtils: languageUtils,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            myTable,
-            const SizedBox(height: 20),
-            myTable2,
-          ],
-        ),
-      ),
+      body: AlarmPage(),
     );
   }
 }

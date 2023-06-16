@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'lang.dart';
@@ -22,8 +21,7 @@ class LanguageUtils {
     if (selectedLanguage != null) {
       currentLanguage = selectedLanguage;
     } else {
-      String preferredLanguage =
-          (await PlatformDispatcher.instance.locale) as String;
+      String preferredLanguage = (PlatformDispatcher.instance.locale) as String;
 
       if (supportedLocales
           .contains(Locale.fromSubtags(languageCode: preferredLanguage))) {
