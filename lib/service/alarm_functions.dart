@@ -73,7 +73,6 @@ class AlarmFunctions {
   Future<void> showAlarmDialog(BuildContext context) async {
     TimeOfDay selectedTime = TimeOfDay.now();
     DateTime selectedDate = DateTime.now();
-    List<bool> selectedDays = List<bool>.generate(7, (_) => false);
 
     await showDialog(
       context: context,
@@ -102,22 +101,6 @@ class AlarmFunctions {
                       selectedTime.format(context),
                       style: TextStyle(fontSize: 18),
                     ),
-                  ),
-                  SizedBox(height: 16),
-                  Text('Select Days:'),
-                  Column(
-                    children: List.generate(7, (index) {
-                      final dayName = getDayName(index + 1);
-                      return CheckboxListTile(
-                        value: selectedDays[index],
-                        onChanged: (value) {
-                          setState(() {
-                            selectedDays[index] = value ?? false;
-                          });
-                        },
-                        title: Text(dayName),
-                      );
-                    }),
                   ),
                   SizedBox(height: 16),
                   Text('Select Date:'),
@@ -182,26 +165,5 @@ class AlarmFunctions {
         });
       },
     );
-  }
-
-  String getDayName(int weekday) {
-    switch (weekday) {
-      case DateTime.monday:
-        return 'Monday';
-      case DateTime.tuesday:
-        return 'Tuesday';
-      case DateTime.wednesday:
-        return 'Wednesday';
-      case DateTime.thursday:
-        return 'Thursday';
-      case DateTime.friday:
-        return 'Friday';
-      case DateTime.saturday:
-        return 'Saturday';
-      case DateTime.sunday:
-        return 'Sunday';
-      default:
-        return '';
-    }
   }
 }
