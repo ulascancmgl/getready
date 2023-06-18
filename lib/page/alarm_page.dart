@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import '../model/alarm_model.dart';
+import '../model/alarm_model2.dart';
 import '../service/alarm_functions.dart';
+import '../service/alarm_functions2.dart';
 
 class AlarmPage extends StatefulWidget {
   @override
@@ -8,13 +11,16 @@ class AlarmPage extends StatefulWidget {
 
 class _AlarmPageState extends State<AlarmPage> {
   AlarmFunctions alarmFunctions = AlarmFunctions();
+  AlarmFunctions2 alarmFunctions2 = AlarmFunctions2();
 
   @override
   void initState() {
     super.initState();
     alarmFunctions.refreshPage = refreshPage;
+    alarmFunctions2.refreshPage = refreshPage;
     setState(() {
       alarmFunctions.initializeAlarm();
+      alarmFunctions2.initializeAlarm2();
     });
   }
 
@@ -24,6 +30,11 @@ class _AlarmPageState extends State<AlarmPage> {
 
   @override
   Widget build(BuildContext context) {
+    List<dynamic> allAlarms = [
+      ...alarmFunctions.alarms,
+      ...alarmFunctions2.alarms
+    ];
+
     return Scaffold(
       body: Column(
         children: [
@@ -42,27 +53,48 @@ class _AlarmPageState extends State<AlarmPage> {
             },
             child: Icon(Icons.add),
           ),
+          ElevatedButton(
+            onPressed: () {
+              alarmFunctions2.showAlarmDialog2(context).then((_) {
+                setState(() {});
+              });
+            },
+            child: Icon(Icons.add),
+          ),
           Flexible(
             child: Container(
               child: ListView.builder(
-                itemCount: alarmFunctions.alarms.length,
+                itemCount: allAlarms.length,
                 itemBuilder: (context, index) {
-                  final alarm = alarmFunctions.alarms[index];
+                  final alarm = allAlarms[index];
                   return ListTile(
                     title: Text(
-                      '${alarm.date.hour.toString().padLeft(2, '0')}:${alarm.date.minute.toString().padLeft(2, '0')}',
+                      alarm is Alarm
+                          ? '${alarm.date.hour.toString().padLeft(2, '0')}:${alarm.date.minute.toString().padLeft(2, '0')}'
+                          : '${alarm.hour.toString().padLeft(2, '0')}:${alarm.minute.toString().padLeft(2, '0')}',
                       style: TextStyle(fontSize: 18),
                     ),
-                    subtitle: Text(
-                      '${alarm.date.day}/${alarm.date.month}/${alarm.date.year}',
-                      style: TextStyle(fontSize: 16),
-                    ),
+                    subtitle: alarm is Alarm
+                        ? Text(
+                            '${alarm.date.day}/${alarm.date.month}/${alarm.date.year}',
+                            style: TextStyle(fontSize: 16),
+                          )
+                        : Text(
+                            'Days: ${alarm.days.map((dayIndex) => alarmFunctions2.getWeekdayName(dayIndex)).join(", ")}',
+                            style: TextStyle(fontSize: 16),
+                          ),
                     trailing: IconButton(
                       icon: Icon(Icons.delete),
                       onPressed: () {
-                        alarmFunctions.deleteAlarm(alarm).then((_) {
-                          setState(() {});
-                        });
+                        if (alarm is Alarm) {
+                          alarmFunctions.deleteAlarm(alarm).then((_) {
+                            setState(() {});
+                          });
+                        } else if (alarm is Alarm2) {
+                          alarmFunctions2.deleteAlarm2(alarm).then((_) {
+                            setState(() {});
+                          });
+                        }
                       },
                     ),
                   );
